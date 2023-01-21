@@ -24,20 +24,15 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.fact-form {
-  background-color: #44403c;
-  margin-bottom: 40px;
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-radius: 16px;
-}
-
 .main {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
+}
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Elements */
@@ -57,6 +52,19 @@ h1 {
   text-transform: uppercase;
   margin-top: 6px;
 }
+@media (max-width: 600px) {
+  .header {
+    margin-bottom: 20px;
+
+    flex-direction: column;
+  }
+  .logo {
+    justify-content: center;
+  }
+  h1 {
+    font-size: 32px;
+  }
+}
 .category {
   margin-bottom: 10px;
 }
@@ -72,6 +80,13 @@ h1 {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
 }
 
 .tag {
@@ -148,6 +163,16 @@ ul {
   width: 100%;
   background-image: none;
 }
+/* Form */
+.fact-form {
+  background-color: #44403c;
+  margin-bottom: 40px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+}
 .fact-form input,
 .fact-form select {
   width: 220px;
@@ -169,4 +194,18 @@ ul {
   font-weight: 600;
   font-size: 18px;
   margin-right: 18px;
+}
+
+@media (max-width: 1000px) {
+  .body {
+    padding: 32px 48px;
+  }
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
 }
