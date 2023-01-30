@@ -278,7 +278,7 @@ function FactList({ facts, setFacts }) {
 function Fact({ fact, setFacts }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const isDiputed =
-    fact.votesInteresting + fact.votesMindblowing <= fact.votesFalse;
+    fact.votesInteresting + fact.votesMindblowing < fact.votesFalse;
 
   async function handleVote(columnName) {
     setIsUpdating(true);
