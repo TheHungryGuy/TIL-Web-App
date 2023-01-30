@@ -8,7 +8,15 @@ body {
   background-color: #262626;
   color: #fafaf9;
   font-family: "sono", sans-serif;
-  padding: 48px 64px;
+  padding: 48px 64px 0px;
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .hidden {
@@ -23,11 +31,26 @@ body {
   margin-top: 24px;
 }
 
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
 /*Main Layout*/
 #root {
   max-width: 1500px;
   margin: 0 auto;
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
 }
+
+#root::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
 .header {
   margin-bottom: 40px;
   padding: 10px;
@@ -40,6 +63,8 @@ body {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
+
+  height: calc(100vh - 68px - 40px - 48px - 26px);
 }
 @media (max-width: 900px) {
   .main {
@@ -47,6 +72,14 @@ body {
   }
 }
 
+section {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+section::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 /* Elements */
 .logo {
   display: flex;
@@ -63,19 +96,6 @@ h1 {
   font-family: "Coiny", sans-serif;
   text-transform: uppercase;
   margin-top: 6px;
-}
-@media (max-width: 600px) {
-  .header {
-    margin-bottom: 20px;
-
-    flex-direction: column;
-  }
-  .logo {
-    justify-content: center;
-  }
-  h1 {
-    font-size: 32px;
-  }
 }
 .category {
   margin-bottom: 10px;
@@ -131,6 +151,10 @@ h1 {
 }
 .vote-buttons button:hover {
   background-color: #262626;
+}
+
+.vote-buttons button:disabled {
+  background-color: #44403c;
 }
 ul {
   list-style: none;
@@ -219,5 +243,30 @@ ul {
   .fact-form input,
   .fact-form select {
     width: auto;
+  }
+}
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fact-form {
+    padding: 16px;
+  }
+
+  .fact {
+    padding: 12px 16px;
   }
 }
